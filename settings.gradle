@@ -1,1 +1,3 @@
 rootProject.name = 'grails-plugin-property-source-demo'
+
+include "plugins:comment"
