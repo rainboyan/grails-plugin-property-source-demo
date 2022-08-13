@@ -37,7 +37,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins <span class="caret"></span></a>
         <ul class="dropdown-menu dropdown-menu-right">
             <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-                <li class="dropdown-item"><a href="#">${plugin.name} - ${plugin.version} - ${plugin?.propertySource?.getProperty('hello')}</a></li>
+                <li class="dropdown-item"><a href="#">${plugin.name} - ${plugin.version}</a></li>
             </g:each>
         </ul>
     </li>
@@ -62,23 +62,6 @@
             </p>
 
             <div id="controllers" role="navigation">
-                <h2>Comment propertySource:</h2>
-                <ul>
-                    <li>Comment propertySource:</li>
-                    <li>Environment(grails.plugins.comment.hello) = ${applicationContext.environment.getProperty("grails.plugins.comment.hello", String.class)}</li>
-                    <li>grailsApplication.config(grails.plugins.comment.hello) = ${grailsApplication.config.getProperty("grails.plugins.comment.hello", String.class)}</li>
-                    <li>GrailsApplication.config.grails.plugins.comment.hello = ${grailsApplication.config.grails.plugins.comment.hello}</li>
-                    <li>Environment(hello) = ${applicationContext.environment.getProperty("hello", String.class)}</li>
-                    <li>GrailsApplication.config(hello) = ${grailsApplication.config.getProperty("hello", String.class)}</li>
-                </ul>
-                <h2>Tag propertySource:</h2>
-                <ul>
-                    <li>Environment(grails.plugins.tag.mytag) = ${applicationContext.environment.getProperty("grails.plugins.tag.mytag", String.class)}</li>
-                    <li>GrailsApplication.config(grails.plugins.tag.mytag) = ${grailsApplication.config.getProperty("grails.plugins.tag.mytag", String.class)}</li>
-                    <li>GrailsApplication.config.grails.plugins.tag.mytag = ${grailsApplication.config.grails.plugins.tag.mytag}</li>
-                    <li>Environment(mytag) = ${applicationContext.environment.getProperty("mytag", String.class)}</li>
-                    <li>GrailsApplication.config(mytag) = ${grailsApplication.config.getProperty("mytag", String.class)}</li>
-                </ul>
                 <h2>Available Controllers:</h2>
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
